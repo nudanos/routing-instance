@@ -3,7 +3,11 @@
 # Copyright (c) 2018-2019, AT&T Intellectual Property. All rights reserved.
 # SPDX-License-Identifier: GPL-2.0-only
 
-import vci,sys
+import sys
+
+import vci
+
 vrfname = sys.argv[1]
 client = vci.Client()
-client.emit("vyatta-routing-v1", "instance-added", { "vyatta-routing-v1:name": vrfname })
+client.emit("vyatta-routing-v1", "instance-added",
+            {"vyatta-routing-v1:name": vrfname})
